@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SampleNullableDateTimePicker.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ndtp="clr-namespace:Maui.NullableDateTimePicker;assembly=Maui.NullableDateTimePicker">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="dayNameStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Background" Value="Transparent" />
+            </Style>
+            <Style x:Key="dayStyle" TargetType="Button">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+            <Style x:Key="otherMonthStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="#919191" />
+                <Setter Property="Background" Value="Transparent" />
+            </Style>
+            <Style x:Key="disabledDayStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="#919191" />
+                <Setter Property="Background" Value="Transparent" />
+            </Style>
+            <Style x:Key="toolBtnStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="#1F58E0" />
+                <Setter Property="Background" Value="{StaticResource LightTransparant}" />
+                <Setter Property="BorderColor" Value="{StaticResource LightTransparant}" />
+                <Setter Property="Margin" Value="10,0" />
+            </Style>
+            <Style x:Key="selectedBtnStyle" TargetType="Button">
+                <Setter Property="Background" Value="#1F58E0" />
+                <Setter Property="TextColor" Value="{StaticResource White}" />
+            </Style>
+            <Style x:Key="borderStyle" TargetType="Border">
+                <Setter Property="Padding" Value="10,0" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="Stroke" Value="#DFD8F7" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 10" />
+                <Setter Property="StrokeThickness" Value="1" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Border Style="{StaticResource borderStyle}">
+                <ndtp:NullableDateTimePicker
+                    x:Name="datePicker"
+                    BackgroundColor="{StaticResource LightTransparant}"
+                    CloseOnOutsideClick="True"
+                    DayNamesStyle="{StaticResource dayNameStyle}"
+                    DayStyle="{StaticResource dayStyle}"
+                    DisabledDayStyle="{StaticResource disabledDayStyle}"
+                    FontSize="16"
+                    Format="MMMM dd, yyyy hh:mm tt"
+                    HeaderBackgroundColor="#1F58E0"
+                    HeightRequest="50"
+                    Icon="datetime"
+                    IconBackgroundColor="{StaticResource LightTransparant}"
+                    Is12HourFormat="True"
+                    Mode="DateTime"
+                    OtherMonthDayStyle="{StaticResource otherMonthStyle}"
+                    Placeholder="Select Date"
+                    SelectedDayStyle="{StaticResource selectedBtnStyle}"
+                    ToolButtonsStyle="{StaticResource toolBtnStyle}"
+                    VerticalOptions="Center" />
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
